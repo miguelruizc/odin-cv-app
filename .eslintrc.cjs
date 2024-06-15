@@ -7,15 +7,15 @@ module.exports = {
 		'plugin:react/jsx-runtime',
 		'plugin:react-hooks/recommended',
 		'airbnb',
-		'prettier',
+		'plugin:prettier/recommended',
 	],
 	ignorePatterns: ['dist', '.eslintrc.cjs'],
-	parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
+	parserOptions: { ecmaVersion: 'latest', sourceType: 'module', ecmaFeatures: { jsx: true } },
 	settings: { react: { version: '18.2' } },
 	plugins: ['react-refresh', 'prettier'],
 	rules: {
 		'react/jsx-no-target-blank': 'off',
 		'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
-		'prettier/prettier': ['error'],
+		'prettier/prettier': [1],
 	},
 };

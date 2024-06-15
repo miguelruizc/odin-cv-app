@@ -1,4 +1,6 @@
 /* eslint-disable react/prop-types */
+import React from 'react';
+
 export function Section({ title, children }) {
 	return (
 		<div>
@@ -7,3 +9,5 @@ export function Section({ title, children }) {
 		</div>
 	);
 }
+
+export default Section;
