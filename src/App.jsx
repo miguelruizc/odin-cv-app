@@ -1,8 +1,12 @@
+import {Section} from './Section.jsx';
+
 function App() {
 
   return (
     <>
-      <h1>Hello react!</h1>
+      <Section title="General Information">{}</Section>
+      <Section title="Education">{}</Section>
+      <Section title="Professional Experience">{}</Section>
     </>
   )
 }
