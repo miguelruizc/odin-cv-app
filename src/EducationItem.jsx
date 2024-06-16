@@ -1,12 +1,10 @@
 /* eslint-disable react/prop-types */
-import { React, useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
+import React from 'react';
+
 import Input from './Input';
 import formData from './formData';
 
-function EducationItem() {
-	const [id] = useState(uuidv4());
-
+function EducationItem(id) {
 	// Add education object with ID
 	const idExists = formData.education.some((element) => element.id === id);
 	if (!idExists) {

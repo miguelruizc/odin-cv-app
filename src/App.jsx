@@ -7,9 +7,22 @@ import ExperienceItem from './ExperienceItem';
 
 function App() {
 	const [educationItems, setEducationItems] = useState([]);
+	const [experienceItems, setExperienceItems] = useState([]);
 
 	const addEducationItem = () => {
-		setEducationItems((prevState) => [...prevState, <EducationItem key={uuidv4()} />]);
+		const uniqueId = uuidv4();
+		setEducationItems((prevState) => [
+			...prevState,
+			<EducationItem key={uniqueId} id={uniqueId} />,
+		]);
+	};
+
+	const addExperienceItem = () => {
+		const uniqueId = uuidv4();
+		setExperienceItems((prevState) => [
+			...prevState,
+			<ExperienceItem parentSetter={setExperienceItems} key={uniqueId} id={uniqueId} />,
+		]);
 	};
 
 	return (
@@ -26,8 +39,10 @@ function App() {
 				</button>
 			</Section>
 			<Section title="Professional Experience">
-				<ExperienceItem />
-				<button type="button"> Add </button>
+				{experienceItems}
+				<button type="button" onClick={addExperienceItem}>
+					Add
+				</button>
 			</Section>
 			<br />
 			<button type="submit">Submit all</button>

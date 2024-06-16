@@ -1,11 +1,8 @@
-import { React, useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
+import React from 'react';
 import Input from './Input';
 import formData from './formData';
 
-function ExperienceItem() {
-	const [id] = useState(uuidv4());
-
+function ExperienceItem(id) {
 	// Add experience object with ID
 	const idExists = formData.experience.some((element) => element.id === id);
 	if (!idExists) {
@@ -19,6 +16,14 @@ function ExperienceItem() {
 		};
 		formData.experience.push(experienceObject);
 	}
+
+	const remove = () => {
+		// remove from form data
+		// remove from parent
+		parentSetter((prevState) => {
+			console.log(prevState);
+		});
+	};
 
 	return (
 		<div>
@@ -47,7 +52,9 @@ function ExperienceItem() {
 				subObjectId={id}
 			/>
 			<Input title="End date" formField="endDate" subObject="experience" subObjectId={id} />
-			<button type="button">remove</button>
+			<button type="button" onClick={remove}>
+				remove
+			</button>
 		</div>
 	);
 }
