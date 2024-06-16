@@ -1,26 +1,27 @@
 import React from 'react';
 import { Section } from './Section';
+import Input from './Input';
+import EducationItem from './EducationItem';
+import ExperienceItem from './ExperienceItem';
 
 function App() {
 	return (
 		<>
 			<Section title="General Information">
-				<label>Name: </label>
-				<input></input>
-				<br />
-				<label>Name: </label>
-				<input></input>
-				<br />
-				<label>Name: </label>
-				<input></input>
+				<Input title="Name" />
+				<Input title="Email" />
+				<Input title="Phone" />
 			</Section>
 			<Section title="Education">
-				-education item -school name -title of study -date of study
+				<EducationItem />
+				<button type="button"> Add </button>
 			</Section>
 			<Section title="Professional Experience">
-				-professional item -company name -position title -main responsabilities -start date
-				-end date
+				<ExperienceItem />
+				<button type="button"> Add </button>
 			</Section>
+			<br />
+			<button type="submit">Submit all</button>
 		</>
 	);
 }
