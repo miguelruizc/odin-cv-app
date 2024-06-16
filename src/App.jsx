@@ -8,9 +8,9 @@ function App() {
 	return (
 		<>
 			<Section title="General Information">
-				<Input title="Name" />
-				<Input title="Email" />
-				<Input title="Phone" />
+				<Input title="Name" formField="name" />
+				<Input title="Email" formField="email" />
+				<Input title="Phone" formField="phone" />
 			</Section>
 			<Section title="Education">
 				<EducationItem />
