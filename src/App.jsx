@@ -39,9 +39,11 @@ function App() {
 		return (
 			<>
 				<Section title="General Information">
-					<Input title="Name" formField="name" />
-					<Input title="Email" formField="email" />
-					<Input title="Phone" formField="phone" />
+					<div className="card">
+						<Input title="Name" formField="name" />
+						<Input title="Email" formField="email" />
+						<Input title="Phone" formField="phone" />
+					</div>
 				</Section>
 				<Section title="Education">
 					{educationItems}
@@ -55,7 +57,6 @@ function App() {
 						Add
 					</button>
 				</Section>
-				<br />
 				<button type="submit" onClick={submit}>
 					Submit all
 				</button>

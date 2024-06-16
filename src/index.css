@@ -13,12 +13,36 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: left;
+  align-items: center;
   height: 100vh;
   max-width: 600px;
   min-width: 400px;
 }
 
+h1 {
+  text-align: right;
+}
+
 button {
   max-width: 100px;
+}
+
+.section {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.formInput {
+  display: flex;
+  justify-content: right;
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  padding: 10px;
 }

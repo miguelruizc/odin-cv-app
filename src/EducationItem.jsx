@@ -27,9 +27,9 @@ function EducationItem({ id, parentSetter }) {
 	};
 
 	return (
-		<div>
+		<div className="card">
 			<Input
-				title="School Name"
+				title="School name"
 				formField="schoolName"
 				subObject="education"
 				subObjectId={id}

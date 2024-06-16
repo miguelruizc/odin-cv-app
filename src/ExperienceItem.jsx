@@ -28,7 +28,7 @@ function ExperienceItem({ id, parentSetter }) {
 	};
 
 	return (
-		<div>
+		<div className="card">
 			<Input
 				title="Company name"
 				formField="companyName"
