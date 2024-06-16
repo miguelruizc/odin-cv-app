@@ -13,7 +13,7 @@ function App() {
 		const uniqueId = uuidv4();
 		setEducationItems((prevState) => [
 			...prevState,
-			<EducationItem key={uniqueId} id={uniqueId} />,
+			<EducationItem key={uniqueId} id={uniqueId} parentSetter={setEducationItems} />,
 		]);
 	};
 
@@ -21,7 +21,7 @@ function App() {
 		const uniqueId = uuidv4();
 		setExperienceItems((prevState) => [
 			...prevState,
-			<ExperienceItem parentSetter={setExperienceItems} key={uniqueId} id={uniqueId} />,
+			<ExperienceItem key={uniqueId} id={uniqueId} parentSetter={setExperienceItems} />,
 		]);
 	};
 

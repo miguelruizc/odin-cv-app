@@ -1,8 +1,9 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import Input from './Input';
 import formData from './formData';
 
-function ExperienceItem(id) {
+function ExperienceItem({ id, parentSetter }) {
 	// Add experience object with ID
 	const idExists = formData.experience.some((element) => element.id === id);
 	if (!idExists) {
@@ -19,10 +20,11 @@ function ExperienceItem(id) {
 
 	const remove = () => {
 		// remove from form data
+		const index = formData.experience.findIndex((element) => element.id === id);
+		formData.experience.splice(index, 1);
+
 		// remove from parent
-		parentSetter((prevState) => {
-			console.log(prevState);
-		});
+		parentSetter((prevState) => prevState.filter((element) => element.key !== id));
 	};
 
 	return (
