@@ -47,6 +47,7 @@ function ExperienceItem() {
 				subObjectId={id}
 			/>
 			<Input title="End date" formField="endDate" subObject="experience" subObjectId={id} />
+			<button type="button">remove</button>
 		</div>
 	);
 }

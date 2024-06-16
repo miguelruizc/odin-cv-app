@@ -1,10 +1,17 @@
-import React from 'react';
+import { React, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { Section } from './Section';
 import Input from './Input';
 import EducationItem from './EducationItem';
 import ExperienceItem from './ExperienceItem';
 
 function App() {
+	const [educationItems, setEducationItems] = useState([]);
+
+	const addEducationItem = () => {
+		setEducationItems((prevState) => [...prevState, <EducationItem key={uuidv4()} />]);
+	};
+
 	return (
 		<>
 			<Section title="General Information">
@@ -13,8 +20,10 @@ function App() {
 				<Input title="Phone" formField="phone" />
 			</Section>
 			<Section title="Education">
-				<EducationItem />
-				<button type="button"> Add </button>
+				{educationItems}
+				<button type="button" onClick={addEducationItem}>
+					Add
+				</button>
 			</Section>
 			<Section title="Professional Experience">
 				<ExperienceItem />
