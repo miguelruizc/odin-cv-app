@@ -10,8 +10,6 @@ function Input({ title, formField, subObject, subObjectId }) {
 		} else {
 			formData[formField] = event.target.value;
 		}
-
-		console.table(formData);
 	}
 
 	return (
