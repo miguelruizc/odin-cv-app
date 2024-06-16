@@ -67,43 +67,89 @@ function App() {
 	const printable = () => {
 		const educationItemsPrintable = formData.education.map((element) => {
 			return (
-				<Fragment key={element.id}>
-					<p>School name: </p>
-					<p>{element.schoolName}</p>
-					<p>Title of study: </p>
-					<p>{element.studyTitle}</p>
-					<p>Date of study: </p>
-					<p>{element.studyDate}</p>
-				</Fragment>
+				<div key={element.id} className="card">
+					<div className="formInput">
+						<p>School name: </p>
+						<div className="fakeInput">
+							<p>{element.schoolName}</p>
+						</div>
+					</div>
+					<div className="formInput">
+						<p>Title of study: </p>
+						<div className="fakeInput">
+							<p>{element.studyTitle}</p>
+						</div>
+					</div>
+					<div className="formInput">
+						<p>Date of study: </p>
+						<div className="fakeInput">
+							<p>{element.studyDate}</p>
+						</div>
+					</div>
+				</div>
 			);
 		});
 
 		const experienceItemsPrintable = formData.experience.map((element) => {
 			return (
-				<Fragment key={element.id}>
-					<p>Company name: </p>
-					<p>{element.companyName}</p>
-					<p>Position title: </p>
-					<p>{element.position}</p>
-					<p>Main responsibilities: </p>
-					<p>{element.responsibilities}</p>
-					<p>Start date: </p>
-					<p>{element.startDate}</p>
-					<p>End date: </p>
-					<p>{element.endDate}</p>
-				</Fragment>
+				<div key={element.id} className="card">
+					<div className="formInput">
+						<p>Company name: </p>
+						<div className="fakeInput">
+							<p>{element.companyName}</p>
+						</div>
+					</div>
+					<div className="formInput">
+						<p>Position title: </p>
+						<div className="fakeInput">
+							<p>{element.position}</p>
+						</div>
+					</div>
+					<div className="formInput">
+						<p>Main responsibilities: </p>
+						<div className="fakeInput">
+							<p>{element.responsibilities}</p>
+						</div>
+					</div>
+					<div className="formInput">
+						<p>Start date: </p>
+						<div className="fakeInput">
+							<p>{element.startDate}</p>
+						</div>
+					</div>
+					<div className="formInput">
+						<p>End date: </p>
+						<div className="fakeInput">
+							<p>{element.endDate}</p>
+						</div>
+					</div>
+				</div>
 			);
 		});
 
 		return (
 			<>
 				<Section title="General Information">
-					<p>Name: </p>
-					<p>{formData.name}</p>
-					<p>Email: </p>
-					<p>{formData.email}</p>
-					<p>Phone: </p>
-					<p>{formData.phone}</p>
+					<div className="card">
+						<div className="formInput">
+							<p>Name: </p>
+							<div className="fakeInput">
+								<p>{formData.name}</p>
+							</div>
+						</div>
+						<div className="formInput">
+							<p>Email: </p>
+							<div className="fakeInput">
+								<p>{formData.email}</p>
+							</div>
+						</div>
+						<div className="formInput">
+							<p>Phone: </p>
+							<div className="fakeInput">
+								<p>{formData.phone}</p>
+							</div>
+						</div>
+					</div>
 				</Section>
 				<Section title="Education">{educationItemsPrintable}</Section>
 				<Section title="Professional Experience">{experienceItemsPrintable}</Section>
